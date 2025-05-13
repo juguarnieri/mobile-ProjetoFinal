@@ -4,18 +4,33 @@ import Home from "../pages/Home";
 import Search from "../pages/Search";
 import LiveTv from "../pages/LiveTv";
 import Account from "../pages/Account";
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+
 
 const Tab = createBottomTabNavigator();
 
 export default function TabRoutes() {
     return (
-        <Tab.Navigator>
+        <Tab.Navigator        
+            screenOptions={{
+            tabBarActiveTintColor: 'red',  // cor quando ativa
+            tabBarInactiveTintColor: 'gray', // cor quando inativa
+            tabBarStyle: {
+                backgroundColor: '#fff',
+                borderTopWidth: 0.5,
+                height: 60,
+            },
+            headerShown: false, // Oculta o header de cada tab
+        }}
+    >
             <Tab.Screen 
             name="Home" 
             component={Home}
             options={{
                 tabBarIcon: ({ color, size}) => (
-                    <Icon name="home" color={color} size={size} />
+                    <FontAwesome name="home" size={size} color="color" />
                 ),
             }} 
         />
@@ -24,7 +39,7 @@ export default function TabRoutes() {
             component={Search}
             options={{
                 tabBarIcon: ({ color, size}) => (
-                    <Icon name="search" color={color} size={size} />
+                    <FontAwesome name="search" size={size} color="color" />
                 ),
             }} 
         />
@@ -33,7 +48,7 @@ export default function TabRoutes() {
             component={LiveTv}
             options={{
                 tabBarIcon: ({ color, size}) => (
-                    <Icon name="livetv" color={color} size={size} />
+                    <MaterialIcons name="live-tv" size={size} color="color" />
                 ),
             }} 
         />
@@ -42,7 +57,7 @@ export default function TabRoutes() {
             component={Account}
             options={{
                 tabBarIcon: ({ color, size}) => (
-                    <Icon name="account" color={color} size={size} />
+                    <MaterialCommunityIcons name="account-circle" size={size} color="color" />
                 ),
             }} 
         />
