@@ -1,44 +1,54 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import Header from '../components/Header';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 export default function Home() {
     return (
-        <View style={styles.header}>
-            <Text style={styles.title}>
-                <Text style={styles.titleWhite}>CRIME </Text>
-                <Text style={styles.titleRed}>WHISPERS</Text>
-            </Text>
+        <View style={styles.container}>
+            <Header />
+
+            <View style={styles.buttons}>
+                
+                <View style={styles.block}>
+                <Text style={styles.title}>CW</Text>
+                </View>
+
+                <TouchableOpacity style={styles.gearButton}>
+                    <FontAwesome name="gear" size={24} color="black" />
+                </TouchableOpacity>
+        </View>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    header: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        height: 60,
-        backgroundColor: '#020038',
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingHorizontal: 16,
-        textAlign: 'center',
-        justifyContent: 'center'
-},
-    menuButton: {
-        marginRight: 12,
+    container: {
+        flex: 1,
+        flexDirection: 'column',
+        width: '100%',
+    },
+    block: {
+        backgroundColor: 'red',
+        width: 30,
+        height: 30,
+        marginLeft: 20,
     },
     title: {
-        fontSize: 18,
+        fontSize: 15,
         fontWeight: 'bold',
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    titleWhite: {
         color: '#FFFFFF',
+        textAlign: 'center',
+        marginTop: 5,
     },
-    titleRed: {
-        color: '#FF0000',
+    gearButton: {
+        marginRight: 20,
+    },
+    buttons: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 10,
+        alignItems: 'center',
     },
 });
