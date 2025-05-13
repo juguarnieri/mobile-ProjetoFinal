@@ -1,12 +1,10 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import DrawerRoutes from "./navigation/DrawerRoutes";
+import React from 'react';
+import { Text, View } from 'react-native';
 
 export default function App() {
   return (
-  <NavigationContainer>
-    <DrawerRoutes/>
-  </NavigationContainer>
-
+    <View>
+      <Text>Olá, mundo!</Text>
+    </View>
   );
 }
